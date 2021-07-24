@@ -8,10 +8,10 @@ class Student
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
 
-  def initialize(name,grade,id=nil)
+  def initialize(id=nil,name,grade)
+    @id=id  
     @name=name
     @grade=grade
-    @id=id
   end
 
   def self.create_table
@@ -49,6 +49,13 @@ class Student
     new_student = Student.new(name,grade)
     new_student.save
   end
+
+  def self.new_from_db(row)
+      name=row[1]
+      grade=row[2]
+      id=row[0]
+      self.new(id,name,grade)
+    end
 
 
 end
