@@ -51,3 +51,4 @@ This class method takes in an argument of a name. It queries the database table 
 ### The `#update` Method
 
 This method updates the database row mapped to the given `Student` instance. 
+# Phase3UpdatingRecords
